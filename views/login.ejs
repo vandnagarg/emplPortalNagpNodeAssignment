@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register</title>
+  <link>
+  <% include ./partials/linksHeader %>
+  </link>
+</head>
+
+<body>
+  <header>
+    <!-- <% include ./partials/header %> -->
+  </header>
+  <div class="container" style="padding-top: 7%;width:30%">
+    <h3 style="text-align: center;">Login</h3>
+    <% if ( typeof(mssg) !=="undefined"){ %>
+      <span style="color: red;"><%= mssg %></span>
+  <% } %>
+    <form action="/auth/login" method="POST" >
+      <div class="form-group">
+        Name: <input class="form-control" type="text" name="username">
+
+      </div>
+      <div class="form-group">
+        Password:  <input class="form-control" type="password" name="password">
+      </div>
+      <button  class="btn btn-success" type="submit" ><span class="glyphicon glyphicon-log-in"> </span> Login</button>
+    </form><br>
+    <div>
+      <span>Dont have a account? Sign up to register</span><br><br>
+      <a href="/auth/signup" class="btn btn-success"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+    </div>
+  </div>
+</body>
+
+</html>

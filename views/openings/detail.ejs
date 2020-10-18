@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Portal</title>
+    <link>
+    <% include ../partials/linksHeader %>
+    </link>
+</head>
+
+<body>
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <div class="container">
+        <h3>
+            Opening Detail
+        </h3>
+        <br>
+        
+        <table class="">
+            <tr>
+                <td>
+                    <h4>Project Name : </h4>
+                </td>
+                <td>
+                    <%= opening.projName%>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Client Name: 
+                </td>
+                <td>
+                    <%= opening.clientName%></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Technologies :
+                </td>
+                <td>
+                    <%= opening.technologies%></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+            Role:
+                </td>
+                <td>
+             <%= opening.role%></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Job Description:
+                </td>
+                <td>
+                    <%= opening.jobDesc%></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Status:
+                </td>
+                <td>
+                    <%= opening.status%></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Created By:
+                </td>
+                <td>
+                    <%= opening.createdBy%></p>
+                </td>
+            </tr>
+            
+        </table>
+        <br>
+        <form action="/jobapply/apply/<%=opening._id%>" method="POST">
+            <button class="btn btn-success">Apply</button>
+        </form>
+
+
+       
+    </div>
+</body>
+
+</html>

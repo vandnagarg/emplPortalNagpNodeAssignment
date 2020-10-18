@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee Portal</title>
+    <link>
+        <% include ../partials/linksHeader %>
+  </link>
+  </head>
+  <body>
+    <header>
+        <% include ../partials/header %>
+      </header>
+    <div class="container">
+      <h3>
+        Openings
+      </h3>
+    <br>
+    <% if ( typeof(mssg) !=="undefined"){ %>
+      <span style="color: red;"><%= mssg %></span>
+  <% } %>
+      <div class="row">
+    <% for(var i=0 ;i < opening.length; i=i+1 ) { %>
+      <div class="card col-md-4" >
+        <div class="card-body well  ">
+          <h4 class="card-title">Project Name : <%= opening[i].projName%></h4>
+          <p class="card-text">Technologies : <%= opening[i].technologies%></p>
+          <p class="card-text">Role: <%= opening[i].role%></p>
+          <a href="/opening/getDetail/<%=opening[i]._id%>" class="btn btn-primary">See Details</a>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>
+  </body>
+</html>

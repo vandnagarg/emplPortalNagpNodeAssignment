@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link>
+        <% include ../partials/linksHeader %>
+  </link>
+  </head>
+  <body>
+    <header>
+        <% include ../partials/header %>
+      </header>
+      <div class="container">
+        <h3> Update Opening: </h3>
+        <% if ( typeof(updated) !=="undefined" && updated === true ){ %>
+            <span>Opening has been updated</span>
+        <% } %>
+    
+    <form action="/opening/markclosed" method="POST">
+      <div class="form-group">
+        Project Name: 
+        <select name="projName" class="form-control" >
+            <% for(var i=0 ;i < opening.length; i=i+1 ) { %>
+                <option value="<%= opening[i]._id %>"><%= opening[i].projName %></option>
+            <% } %>
+          </select>
+      </div>
+        <input class="btn btn-success" type="submit" value="Mark closed">
+      </form>
+
+   
+    </div>
+  </body>
+</html>
